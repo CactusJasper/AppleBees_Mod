@@ -250,7 +250,7 @@ public class TileEntityAppleFurnace extends TileEntity implements ISidedInventor
 	}
 	
 	public int getBurnTimeRemainingScaled(int i) {
-		if(this.currentItemBurnTime ==0) {
+		if(this.currentItemBurnTime == 0) {
 			this.currentItemBurnTime = this.furnaceSpeed;
 		}
 		return this.burnTime * i / this.currentItemBurnTime;

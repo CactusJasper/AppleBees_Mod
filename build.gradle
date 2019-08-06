@@ -17,7 +17,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "V0.8_AlphaRelease"
+version = "V0.9_AlphaRelease"
 group= "tk.unnamed.applbees" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "AppleBees"
 

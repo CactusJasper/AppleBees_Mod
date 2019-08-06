@@ -24,12 +24,12 @@ import tk.unnamed.applebees.commands.CommandClearInv;
 import tk.unnamed.applebees.commands.CommandMoveWorld;
 import tk.unnamed.applebees.commands.CommandPlayerTp;
 
-@Mod(modid = "applebees", name = "AppleBees", version = "0.8_AlphaRelease", dependencies = "required-before:EE3")
+@Mod(modid = "applebees", name = "AppleBees", version = "V0.9_AlphaRelease", dependencies = "required-before:EE3")
 public class AppleBees
 {
     public static final String MODID = "applebees";
     public static final String NAME = "AppleBees";
-    public static final String VERSION = "0.8_AlphaRelease";
+    public static final String VERSION = "V0.9_AlphaRelease";
     
     @SidedProxy(clientSide = "tk.unnamed.applebees.Proxy.ClientProxy", serverSide = "tk.unnamed.applebees.Proxy.CommonProxy")
 	public static CommonProxy proxy;

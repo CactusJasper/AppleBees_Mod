@@ -42,11 +42,10 @@ public class GUIGoldenAppleFurnace extends GuiContainer {
 	
 		if(this.goldenAppleFurnace.isBurning()) {
 			int k = this.goldenAppleFurnace.getBurnTimeRemainingScaled(40);
-			int j = 40 - k;
-			drawTexturedModalRect(guiLeft + 29, guiTop + 65, 176, 0, 40 - j, 10);
+			drawTexturedModalRect(guiLeft + 10, guiTop + 18 + 39 - k, 176, 39 - k, 40, k + 1);
 		}
 		
 		int k = this.goldenAppleFurnace.getCookProgressScaled(24);
-		drawTexturedModalRect(guiLeft + 79, guiTop + 34, 176, 10, k + 1, 16);
+		drawTexturedModalRect(guiLeft + 79, guiTop + 34, 176, 41, k + 1, 16);
 	}
 }

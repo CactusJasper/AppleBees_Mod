@@ -26,7 +26,6 @@ public class GUIAppleFurnace extends GuiContainer {
 		this.ySize = 166;
 	}
 
-
 	public void drawGuiContainerForegroundLayer(int par1, int par2) {
 		
 		String name = this.appleFurnace.hasCustomInventoryName() ? this.appleFurnace.getInventoryName() : I18n.format(this.appleFurnace.getInventoryName(), new Object[0]);
@@ -43,11 +42,10 @@ public class GUIAppleFurnace extends GuiContainer {
 	
 		if(this.appleFurnace.isBurning()) {
 			int k = this.appleFurnace.getBurnTimeRemainingScaled(40);
-			int j = 40 - k;
-			drawTexturedModalRect(guiLeft + 29, guiTop + 65, 176, 0, 40 - j, 10);
+			drawTexturedModalRect(guiLeft + 10, guiTop + 18 + 39 - k, 176, 39 - k, 40, k + 1);
 		}
 		
 		int k = this.appleFurnace.getCookProgressScaled(24);
-		drawTexturedModalRect(guiLeft + 79, guiTop + 34, 176, 10, k + 1, 16);
+		drawTexturedModalRect(guiLeft + 79, guiTop + 34, 176, 41, k + 1, 16);
 	}
 }
