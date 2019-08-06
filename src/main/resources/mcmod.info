@@ -1,0 +1,16 @@
+[
+{
+  "modid": "applebees",
+  "name": "AppleBees",
+  "description": "The Offical AppleBees Mod for SMP",
+  "version": "0.8_AlphaRelease",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Tttttiiiiiim"],
+  "credits": "Tttttiiiiiim",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

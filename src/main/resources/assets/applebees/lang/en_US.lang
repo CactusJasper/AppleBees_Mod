@@ -1,0 +1,109 @@
+item.obsidian_stick.name=Obsidian Stick
+item.armor_foam_padding.name=Armor Foam Padding
+item.apple_ingot.name=AppleBees Ingot
+item.golden_apple_ingot.name=Golden Apple Ingot
+
+item.tttttiiiiiim_apple.name=Tttttiiiiiim Apple
+
+item.apple_crafting_core.name=Apple Crafting Core
+item.golden_apple_crafting_core.name=Golden Apple Crafting Core
+
+item.apple_pickaxe_head.name=Apple Pickaxe Head
+item.apple_pickaxe.name=Apple Pickaxe
+
+item.apple_axe_head.name=Apple Axe Head
+item.apple_axe.name=Apple Axe
+
+item.apple_shovel_head.name=Apple Shovel Head
+item.apple_shovel.name=Apple Shovel
+
+item.apple_hoe_head.name=Apple Hoe Head
+item.apple_hoe.name=Apple Hoe
+
+item.apple_sword_blade.name=Apple Sword Blade
+item.apple_sword_hilt.name=Apple Sword Hilt
+item.apple_sword.name=Apple Sword
+
+item.apple_helmet.name=Apple Helmet
+
+item.apple_chainmail_piece.name=Apple Chainmail Piece
+item.apple_chestplate_chainmail.name=Apple Chestplate Chainmail
+item.apple_chestplate_inner_armor.name=Apple Inner Armor
+item.apple_chestplate_outer_armor.name=Apple Outer Armor
+item.apple_chestplate.name=Apple Chestplate
+
+item.apple_leggings_left_leg.name=Apple Leggings(Left)
+item.apple_leggings_right_leg.name=Apple Leggings(Right)
+item.apple_leggings.name=Apple Leggings
+
+item.apple_boot_left.name=Apple Boot Left
+item.apple_boot_right.name=Apple Boot Right
+item.apple_boots.name=Apple Boots
+
+item.golden_apple_pickaxe_head.name=Golden Apple Pickaxe Head
+item.golden_apple_blast_core.name=Golden Apple Blast Core
+item.golden_apple_pickaxe.name=Golden Apple Pickaxe
+
+item.golden_apple_axe_head.name=Golden Apple Axe Head
+item.golden_apple_axe.name=Golden Apple Axe
+
+item.golden_apple_shovel_head.name=Golden Apple Shovel Head
+item.golden_apple_shovel.name=Golden Apple Shovel
+
+item.golden_apple_hoe_head.name=Golden Apple Hoe Head
+item.golden_apple_hoe.name=Golden Apple Hoe
+
+item.golden_apple_sword_blade.name=Golden Apple Sword Blade
+item.golden_apple_sword_hilt.name=Golden Apple Sword Hilt
+item.golden_apple_sword.name=Golden Apple Sword
+
+item.golden_apple_helmet.name=Golden Apple Helmet
+
+item.golden_apple_chainmail_piece.name=Golden Apple Chainmail Piece
+item.golden_apple_chestplate_chainmail.name=Golden Apple Chestplate Chainmail
+item.golden_apple_chestplate_inner_armor.name=Golden Apple Inner Armor
+item.golden_apple_chestplate_outer_armor.name=Golden Apple Outer Armor
+item.golden_apple_chestplate.name=Golden Apple Chestplate
+
+item.golden_apple_leggings_left_leg.name=Golden Apple Leggings(Left)
+item.golden_apple_leggings_right_leg.name=Golden Apple Leggings(Right)
+item.golden_apple_leggings.name=Golden Apple Leggings
+
+item.golden_apple_boot_left.name=Golden Apple Boot Left
+item.golden_apple_boot_right.name=Golden Apple Boot Right
+item.golden_apple_boots.name=Golden Apple Boots
+
+tile.apple_chest.name=Apple Chest
+tile.apple_table.name=Apple Table
+tile.apple_furnace_idle.name=Apple Furnace
+tile.apple_furnace_active.name=Apple Furnace
+
+tile.golden_apple_chest.name=Golden Apple Chest
+tile.golden_apple_furnace_idle.name=Golden Apple Furnace
+tile.golden_apple_furnace_active.name=Golden Apple Furnace
+
+tile.apple_ore.name=Apple Ore
+tile.golden_apple_ore.name= Golden Apple Ore
+
+tile.apple_block.name=Apple Block
+tile.golden_apple_block.name=Golden Apple Block
+
+container.apple_furnace=Apple Furnace
+container.golden_apple_furnace=Golden Apple Furnace
+
+enchantment.feast=Feast
+enchantment.health_boost=Health Boost
+
+commands.clearinv.usage=/clearinv <player> [item] [data]
+commands.clearinv.success=Cleared the inventory of %s, removing %d items
+commands.clearinv.failure=Could not clear the inventory of %s, no items to remove
+
+commands.playertp.success=Teleported %s to %s
+commands.playertp.success.coordinates=Teleported %s to %.2f,%.2f,%.2f
+commands.playertp.usage=/playertp [target player] <destination player> OR /playertp [target player] <x> <y> <z>
+commands.playertp.notSameDimension=Unable to teleport because players are not in the same dimension
+
+commands.moveworld.success=Teleported %s to Dimension %s
+commands.moveworld.usage=/moveworld [target player] <Dimension ID>
+
+itemGroup.appleBeesTab=Apple Bees
