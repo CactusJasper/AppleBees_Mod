@@ -16,6 +16,7 @@ import tk.unnamed.applebees.Crafting.CraftingManager;
 import tk.unnamed.applebees.Enchantment.EnchantmentFeast;
 import tk.unnamed.applebees.Enchantment.EnchantmentHealthBoost;
 import tk.unnamed.applebees.Events.AppleBeesEventHandler;
+import tk.unnamed.applebees.Handlers.EMCHandler;
 import tk.unnamed.applebees.Handlers.GUIHandler;
 import tk.unnamed.applebees.Items.ItemManager;
 import tk.unnamed.applebees.Proxy.CommonProxy;
@@ -23,7 +24,7 @@ import tk.unnamed.applebees.commands.CommandClearInv;
 import tk.unnamed.applebees.commands.CommandMoveWorld;
 import tk.unnamed.applebees.commands.CommandPlayerTp;
 
-@Mod(modid = "applebees", name = "AppleBees", version = "0.8_AlphaRelease")
+@Mod(modid = "applebees", name = "AppleBees", version = "0.8_AlphaRelease", dependencies = "required-before:EE3")
 public class AppleBees
 {
     public static final String MODID = "applebees";
@@ -50,6 +51,7 @@ public class AppleBees
     	CraftingManager.registerCrafting();
     	CraftingManager.registerSmelting();
     	proxy.registerWorldGen();
+    	EMCHandler.registerEMCData();
     }
     
     @EventHandler
@@ -57,7 +59,7 @@ public class AppleBees
 		// Proxy, TileEntity, Entity, GUI and Packet Registering
     	NetworkRegistry.INSTANCE.registerGuiHandler(this, new GUIHandler());
     	MinecraftForge.EVENT_BUS.register(AppleBeesEventHandler.class);
-    	FMLCommonHandler.instance().bus().register(new AppleBeesEventHandler());
+    	FMLCommonHandler.instance().bus().register(AppleBeesEventHandler.class);
     	proxy.registerRenders();
 		proxy.registerGUIHandler();
 		proxy.registerModelBakery();
