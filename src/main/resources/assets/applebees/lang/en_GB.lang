@@ -1,7 +1,13 @@
 item.obsidian_stick.name=Obsidian Stick
 item.armor_foam_padding.name=Armor Foam Padding
+
 item.apple_ingot.name=AppleBees Ingot
 item.golden_apple_ingot.name=Golden Apple Ingot
+
+item.iron_dust.name=Iron Dust
+item.gold_dust.name=Gold Dust
+item.diamond_dust.name=Diamond Dust
+item.emerald_dust.name=Emerald Dust
 
 item.tttttiiiiiim_apple.name=Tttttiiiiiim Apple
 
@@ -75,10 +81,16 @@ item.golden_apple_boots.name=Golden Apple Boots
 
 tile.apple_chest.name=Apple Chest
 tile.apple_table.name=Apple Table
+
 tile.apple_furnace_idle.name=Apple Furnace
 tile.apple_furnace_active.name=Apple Furnace
 
+tile.apple_crusher_idle.name=Apple Crusher
+tile.apple_crusher_active.name=Apple Crusher
+
 tile.golden_apple_chest.name=Golden Apple Chest
+tile.golden_apple_table.name=Golden Apple Table
+
 tile.golden_apple_furnace_idle.name=Golden Apple Furnace
 tile.golden_apple_furnace_active.name=Golden Apple Furnace
 
@@ -89,6 +101,8 @@ tile.apple_block.name=Apple Block
 tile.golden_apple_block.name=Golden Apple Block
 
 container.apple_furnace=Apple Furnace
+container.apple_crusher=Apple Crusher
+
 container.golden_apple_furnace=Golden Apple Furnace
 
 enchantment.feast=Feast

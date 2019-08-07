@@ -13,6 +13,7 @@ public class CraftingManager {
 	public static ItemStack appleChest = new ItemStack(BlockManager.appleChest);
 	public static ItemStack appleTable = new ItemStack(BlockManager.appleTable);
 	public static ItemStack appleFurnace = new ItemStack(BlockManager.appleFurnaceIdle);
+	public static ItemStack appleCrusher = new ItemStack(BlockManager.appleCrusherIdle);
 	
 	public static ItemStack goldenAppleChest = new ItemStack(BlockManager.goldenAppleChest);
 	public static ItemStack goldenAppleFurnace = new ItemStack(BlockManager.goldenAppleFurnaceIdle);
@@ -23,6 +24,12 @@ public class CraftingManager {
 	public static ItemStack appleCraftingCore = new ItemStack(ItemManager.appleCraftingCore);
 	public static ItemStack goldenAppleBlock = new ItemStack(BlockManager.goldenAppleBlock);
 	public static ItemStack armorFoamPadding = new ItemStack(ItemManager.armorFoamPadding);
+	
+	// Dusts
+	public static ItemStack ironDust = new ItemStack(ItemManager.ironDust);
+	public static ItemStack goldDust = new ItemStack(ItemManager.goldDust);
+	public static ItemStack diamondDust = new ItemStack(ItemManager.diamondDust);
+	public static ItemStack emeraldDust = new ItemStack(ItemManager.emeraldDust);
 	
 	// Tool Parts
 	public static ItemStack applePickaxeHead = new ItemStack(ItemManager.applePickaxeHead);
@@ -92,6 +99,7 @@ public class CraftingManager {
 		GameRegistry.addRecipe(appleChest, new Object[]{"AAA", "ACA", "AAA", 'A', Items.apple, 'C', Blocks.chest});
 		GameRegistry.addRecipe(appleTable, new Object[]{"AAA", "ATA", "ACA", 'A', Items.apple, 'T', Blocks.crafting_table, 'C', appleCraftingCore});
 		GameRegistry.addRecipe(appleFurnace, new Object[]{"AAA", "AFA", "AAA", 'A', Items.apple, 'C', Blocks.furnace});
+		GameRegistry.addRecipe(appleCrusher, new Object[]{"ADA", "AFA", "ADA", 'A', Items.apple, 'C', Blocks.furnace, 'D', Items.diamond});
 		
 		GameRegistry.addRecipe(goldenAppleChest, new Object[]{"AAA", "ACA", "AAA", 'A', ItemManager.goldenAppleIngot, 'C', appleChest});
 		GameRegistry.addRecipe(goldenAppleFurnace, new Object[]{"III", "IAI", "III", 'A', appleFurnace, 'I', ItemManager.goldenAppleIngot});
@@ -175,7 +183,14 @@ public class CraftingManager {
 	}
 	
 	public static void registerSmelting() {
+		// Ore Recipes
 		GameRegistry.addSmelting(BlockManager.appleOre, new ItemStack(ItemManager.appleIngot), 500.0F);
 		GameRegistry.addSmelting(BlockManager.goldenAppleOre, new ItemStack(ItemManager.goldenAppleIngot), 50000.0F);
+		
+		// Dust Recipes
+		GameRegistry.addSmelting(ironDust, new ItemStack(Items.iron_ingot), 1.0F);
+		GameRegistry.addSmelting(goldDust, new ItemStack(Items.gold_ingot), 1.0F);
+		GameRegistry.addSmelting(diamondDust, new ItemStack(Items.diamond), 1.0F);
+		GameRegistry.addSmelting(emeraldDust, new ItemStack(Items.emerald), 1.0F);
 	}
 }

@@ -9,10 +9,11 @@ import tk.unnamed.applebees.AppleBees;
 import tk.unnamed.applebees.Handlers.GUIHandler;
 import tk.unnamed.applebees.TerrainGen.AppleBeesOreGenration;
 import tk.unnamed.applebees.TileEntity.TileEntityAppleChest;
+import tk.unnamed.applebees.TileEntity.TileEntityAppleCrusher;
 import tk.unnamed.applebees.TileEntity.TileEntityAppleFurnace;
 import tk.unnamed.applebees.TileEntity.TileEntityAppleTable;
 import tk.unnamed.applebees.TileEntity.TileEntityGoldenAppleChest;
-import tk.unnamed.applebees.TileEntity.TileEntityGoldenAppleFurnace;
+import tk.unnamed.applebees.TileEntity.TileEntityGoldenAppleTable;
 
 public class CommonProxy {
 	
@@ -45,7 +46,8 @@ public class CommonProxy {
     	GameRegistry.registerTileEntity(TileEntityGoldenAppleChest.class, "golden_apple_chest_tile_entity");
     	GameRegistry.registerTileEntity(TileEntityAppleTable.class, "apple_table_tile_entity");
     	GameRegistry.registerTileEntity(TileEntityAppleFurnace.class, "apple_furance_tile_entity");
-    	GameRegistry.registerTileEntity(TileEntityGoldenAppleFurnace.class, "golden_apple_furance_tile_entity");
+    	GameRegistry.registerTileEntity(TileEntityAppleCrusher.class, "apple_crusher_tile_entity");
+    	GameRegistry.registerTileEntity(TileEntityGoldenAppleTable.class, "golden_apple_table_tile_entity");
     }
     
     public void registerGUIHandler() {

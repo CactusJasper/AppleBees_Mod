@@ -48,13 +48,13 @@ public class GoldenAppleChest extends BlockContainer implements ITileEntityProvi
 	@Override
 	public void breakBlock(World world, int x, int y, int z, Block block, int metaData)
     {
-        TileEntityGoldenAppleChest  tileentitychest = (TileEntityGoldenAppleChest)world.getTileEntity(x, y, z);
+        TileEntityGoldenAppleChest  te = (TileEntityGoldenAppleChest)world.getTileEntity(x, y, z);
         
-        if(tileentitychest != null)
+        if(te != null)
         {
-            for(int i1 = 0; i1 < tileentitychest.getSizeInventory(); ++i1)
+            for(int i1 = 0; i1 < te.getSizeInventory(); ++i1)
             {
-                ItemStack itemstack = tileentitychest.getStackInSlot(i1);
+                ItemStack itemstack = te.getStackInSlot(i1);
 
                 if(itemstack != null)
                 {

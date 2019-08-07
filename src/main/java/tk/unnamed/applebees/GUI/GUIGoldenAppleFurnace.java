@@ -6,6 +6,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.util.ResourceLocation;
 import tk.unnamed.applebees.AppleBees;
 import tk.unnamed.applebees.Container.ContainerGoldenAppleFurnace;
@@ -42,7 +43,7 @@ public class GUIGoldenAppleFurnace extends GuiContainer {
 	
 		if(this.goldenAppleFurnace.isBurning()) {
 			int k = this.goldenAppleFurnace.getBurnTimeRemainingScaled(40);
-			drawTexturedModalRect(guiLeft + 10, guiTop + 18 + 39 - k, 176, 39 - k, 40, k + 1);
+			drawTexturedModalRect(guiLeft + 10, guiTop + 18 + 40 - k, 176, 40 - k, 40, k + 1);
 		}
 		
 		int k = this.goldenAppleFurnace.getCookProgressScaled(24);

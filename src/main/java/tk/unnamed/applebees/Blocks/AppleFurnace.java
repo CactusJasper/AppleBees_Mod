@@ -187,11 +187,11 @@ public class AppleFurnace extends BlockContainer {
 	
 	public void breakBlock(World world, int x, int y, int z, Block oldblock, int oldMetadata) {
 		if(!keepInventory) {
-			TileEntityAppleFurnace tileentity = (TileEntityAppleFurnace) world.getTileEntity(x, y, z);
+			TileEntityAppleFurnace te = (TileEntityAppleFurnace) world.getTileEntity(x, y, z);
 			
-			if(tileentity != null) {
-				for(int i = 0; i < tileentity.getSizeInventory(); i++) {
-					ItemStack itemstack = tileentity.getStackInSlot(i);
+			if(te != null) {
+				for(int i = 0; i < te.getSizeInventory(); i++) {
+					ItemStack itemstack = te.getStackInSlot(i);
 					
 					if(itemstack != null) {
 						float f = this.rand.nextFloat() * 0.8F + 0.1F;

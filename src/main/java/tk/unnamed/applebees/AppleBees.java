@@ -24,12 +24,12 @@ import tk.unnamed.applebees.commands.CommandClearInv;
 import tk.unnamed.applebees.commands.CommandMoveWorld;
 import tk.unnamed.applebees.commands.CommandPlayerTp;
 
-@Mod(modid = "applebees", name = "AppleBees", version = "V0.9_AlphaRelease", dependencies = "required-before:EE3")
+@Mod(modid = "applebees", name = "AppleBees", version = "V1.0_BetaRelease", dependencies = "required-before:EE3")
 public class AppleBees
 {
     public static final String MODID = "applebees";
     public static final String NAME = "AppleBees";
-    public static final String VERSION = "V0.9_AlphaRelease";
+    public static final String VERSION = "V1.0_BetaRelease";
     
     @SidedProxy(clientSide = "tk.unnamed.applebees.Proxy.ClientProxy", serverSide = "tk.unnamed.applebees.Proxy.CommonProxy")
 	public static CommonProxy proxy;
@@ -42,8 +42,6 @@ public class AppleBees
     
     @EventHandler
     public void preInit(FMLPostInitializationEvent event) {
-    	// Item/Block Init and Registering
-    	// Config Handling
     	instance = this;
     	proxy.registerTileEntities();
     	ItemManager.registerItems();
@@ -56,7 +54,6 @@ public class AppleBees
     
     @EventHandler
     public void init(FMLInitializationEvent event) {
-		// Proxy, TileEntity, Entity, GUI and Packet Registering
     	NetworkRegistry.INSTANCE.registerGuiHandler(this, new GUIHandler());
     	MinecraftForge.EVENT_BUS.register(AppleBeesEventHandler.class);
     	FMLCommonHandler.instance().bus().register(AppleBeesEventHandler.class);

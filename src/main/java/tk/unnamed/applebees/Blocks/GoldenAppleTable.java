@@ -18,19 +18,19 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import tk.unnamed.applebees.AppleBees;
 import tk.unnamed.applebees.Inventroy.AppleBeesTabs;
-import tk.unnamed.applebees.TileEntity.TileEntityAppleChest;
-import tk.unnamed.applebees.TileEntity.TileEntityAppleTable;
+import tk.unnamed.applebees.TileEntity.TileEntityGoldenAppleTable;
 
-public class AppleTable extends BlockContainer implements ITileEntityProvider {
+public class GoldenAppleTable extends BlockContainer implements ITileEntityProvider {
 
 	private final Random random = new Random();
 	
 	@SideOnly(Side.CLIENT)
-	private IIcon appleTableTop;
+	private IIcon goldenAppleTableTop;
 	
-	protected AppleTable() {
+	protected GoldenAppleTable() {
 		super(Material.wood);
-		this.setBlockName("apple_table");
+		
+		this.setBlockName("golden_apple_table");
 		this.setHardness(3.5F);
 		this.setResistance(5.0F);
 		this.setCreativeTab(AppleBeesTabs.appleBeesTab);
@@ -38,19 +38,19 @@ public class AppleTable extends BlockContainer implements ITileEntityProvider {
 	
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon (int side, int metadata) {
-		return side == 1 ? this.appleTableTop : this.blockIcon;
+		return side == 1 ? this.goldenAppleTableTop : this.blockIcon;
 	}
 	
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons (IIconRegister iconRegister) {
-		this.blockIcon = iconRegister.registerIcon(AppleBees.MODID + ":" + "apple_table_side");
-		this.appleTableTop = iconRegister.registerIcon(AppleBees.MODID + ":" + "apple_table_top");
+		this.blockIcon = iconRegister.registerIcon(AppleBees.MODID + ":" + "golden_apple_table_side");
+		this.goldenAppleTableTop = iconRegister.registerIcon(AppleBees.MODID + ":" + "golden_apple_table_top");
 	}
 	
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int q, float a, float b, float c) {
 		if(!world.isRemote && !player.isSneaking()) {
-			player.openGui(AppleBees.instance, BlockManager.guiIDAppleTable, world, x, y, z);
+			player.openGui(AppleBees.instance, BlockManager.guiIDGoldenAppleTable, world, x, y, z);
 			return true;
 		} else {
 			return false;
@@ -59,13 +59,13 @@ public class AppleTable extends BlockContainer implements ITileEntityProvider {
 
 	@Override
 	public TileEntity createNewTileEntity(World world, int meta) {
-		return new TileEntityAppleTable();
+		return new TileEntityGoldenAppleTable();
 	}
 	
 	@Override
 	public void breakBlock(World world, int x, int y, int z, Block block, int metaData)
     {
-		TileEntityAppleTable  te = (TileEntityAppleTable)world.getTileEntity(x, y, z);
+		TileEntityGoldenAppleTable  te = (TileEntityGoldenAppleTable)world.getTileEntity(x, y, z);
         
         if(te != null)
         {
@@ -104,7 +104,7 @@ public class AppleTable extends BlockContainer implements ITileEntityProvider {
             }
             
             EntityItem blockDrop;
-            blockDrop = new EntityItem(world, x, y, z, new ItemStack(BlockManager.appleTable));
+            blockDrop = new EntityItem(world, x, y, z, new ItemStack(BlockManager.goldenAppleTable));
             world.spawnEntityInWorld(blockDrop);
             world.func_147453_f(x, y, z, block);
         }

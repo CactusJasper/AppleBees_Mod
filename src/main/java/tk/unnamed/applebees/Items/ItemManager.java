@@ -1,6 +1,7 @@
 package tk.unnamed.applebees.Items;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraftforge.common.util.EnumHelper;
@@ -12,6 +13,10 @@ public class ItemManager {
 	// Recipe Items
 	public static Item obsidianStick;
 	public static Item armorFoamPadding;
+	public static Item ironDust;
+	public static Item goldDust;
+	public static Item diamondDust;
+	public static Item emeraldDust;
 	
 	// Food Items
 	public static Item tttttiiiiiimApple;
@@ -110,6 +115,12 @@ public class ItemManager {
 		armorFoamPadding = new BaseItem("armor_foam_padding", "armor_foam_padding");
 		appleCraftingCore = new BaseItem("apple_crafting_core", "apple_crafting_core");
 		
+		// Dusts
+		ironDust = new BaseItem("iron_dust", "iron_dust");
+		goldDust = new BaseItem("gold_dust", "gold_dust");
+		diamondDust = new BaseItem("diamond_dust", "diamond_dust");
+		emeraldDust = new BaseItem("emerald_dust", "emerald_dust");
+		
 		// Food Items
 		tttttiiiiiimApple = new TttttiiiiiimApple(10, 0.5F, false);
 		
@@ -192,7 +203,12 @@ public class ItemManager {
 		GameRegistry.registerItem(goldenAppleIngot, goldenAppleIngot.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(armorFoamPadding, armorFoamPadding.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(appleCraftingCore, appleCraftingCore.getUnlocalizedName().substring(5));
-		//GameRegistry.registerItem(goldenAppleCraftingCore, goldenAppleCraftingCore.getUnlocalizedName().substring(5));
+		
+		// Dusts
+		GameRegistry.registerItem(ironDust, ironDust.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(goldDust, goldDust.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(diamondDust, diamondDust.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(emeraldDust, emeraldDust.getUnlocalizedName().substring(5));
 		
 		// Food
 		GameRegistry.registerItem(tttttiiiiiimApple, tttttiiiiiimApple.getUnlocalizedName().substring(5));

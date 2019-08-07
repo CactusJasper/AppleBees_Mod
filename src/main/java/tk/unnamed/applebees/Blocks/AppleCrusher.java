@@ -20,11 +20,11 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import tk.unnamed.applebees.AppleBees;
-import tk.unnamed.applebees.TileEntity.TileEntityGoldenAppleFurnace;
+import tk.unnamed.applebees.TileEntity.TileEntityAppleCrusher;
 
-public class GoldenAppleFurnace extends BlockContainer {
+public class AppleCrusher extends BlockContainer {
 
-	private final boolean isActive;
+private final boolean isActive;
 	
 	@SideOnly(Side.CLIENT)
 	private IIcon iconFront;
@@ -35,7 +35,7 @@ public class GoldenAppleFurnace extends BlockContainer {
 	private static boolean keepInventory;
 	private Random rand = new Random();
 	
-	public GoldenAppleFurnace(boolean isActive) {
+	public AppleCrusher(boolean isActive) {
 		super(Material.iron);
 		
 		this.setHardness(3.5F);
@@ -45,9 +45,9 @@ public class GoldenAppleFurnace extends BlockContainer {
 	
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister) {
-		this.blockIcon = iconRegister.registerIcon(AppleBees.MODID + ":" + "golden_apple_furnace_side");
-		this.iconFront = iconRegister.registerIcon(AppleBees.MODID + ":" + (this.isActive ? "golden_apple_furnace_front_on" : "golden_apple_furnace_front_off"));
-		this.iconTop = iconRegister.registerIcon(AppleBees.MODID + ":" + "golden_apple_furnace_top");
+		this.blockIcon = iconRegister.registerIcon(AppleBees.MODID + ":" + "apple_crusher_side");
+		this.iconFront = iconRegister.registerIcon(AppleBees.MODID + ":" + (this.isActive ? "apple_crusher_front_on" : "apple_crusher_front_off"));
+		this.iconTop = iconRegister.registerIcon(AppleBees.MODID + ":" + "apple_crusher_top");
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -56,17 +56,17 @@ public class GoldenAppleFurnace extends BlockContainer {
 	}
 	
 	public Item getItemDropped(int i, Random random, int j) {
-		return Item.getItemFromBlock(BlockManager.goldenAppleFurnaceIdle);
+		return Item.getItemFromBlock(BlockManager.appleCrusherIdle);
 	}
 	
 	public void onBlockAdded(World world, int x, int y, int z) {
 		super.onBlockAdded(world, x, y, z);
 		this.setDefaultDirection(world, x, y, z);
 	}
-	
+
 	@Override
 	public TileEntity createNewTileEntity(World world, int meta) {
-		return new TileEntityGoldenAppleFurnace();
+		return new TileEntityAppleCrusher();
 	}
 	
 	private void setDefaultDirection(World world, int x, int y, int z) {
@@ -98,16 +98,14 @@ public class GoldenAppleFurnace extends BlockContainer {
 		}
 	}
 	
-	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
 		if(!world.isRemote) {
-			FMLNetworkHandler.openGui(player, AppleBees.instance, BlockManager.guiIDGoldenAppleFurnace, world, x, y, z);
+			FMLNetworkHandler.openGui(player, AppleBees.instance, BlockManager.guiIDAppleCrusher, world, x, y, z);
 		}
 		return true;
 	}
 	
 	@SideOnly(Side.CLIENT)
-	@Override
 	public void randomDisplayTick(World world, int x, int y, int z, Random random) {
 		if(this.isActive) {
 			int direction = world.getBlockMetadata(x, y, z);
@@ -141,7 +139,6 @@ public class GoldenAppleFurnace extends BlockContainer {
 		}
 	}
 	
-	@Override
 	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entityplayer, ItemStack itemstack) {
 		int l = MathHelper.floor_double((double)(entityplayer.rotationYaw * 4.0F / 360.F) + 0.5D) & 3;
 		
@@ -162,20 +159,20 @@ public class GoldenAppleFurnace extends BlockContainer {
 		}
 		
 		if(itemstack.hasDisplayName()) {
-			((TileEntityGoldenAppleFurnace)world.getTileEntity(x, y, z)).setGuiDisplayName(itemstack.getDisplayName());
+			((TileEntityAppleCrusher)world.getTileEntity(x, y, z)).setGuiDisplayName(itemstack.getDisplayName());
 		}
 	}
 	
-	public static void updateGoldenAppleFurnaceBlockState(boolean active, World worldObj, int xCoord, int yCoord, int zCoord) {
+	public static void updateAppleCrusherBlockState(boolean active, World worldObj, int xCoord, int yCoord, int zCoord) {
 		int i = worldObj.getBlockMetadata(xCoord, yCoord, zCoord);
 		
 		TileEntity tileentity = worldObj.getTileEntity(xCoord, yCoord, zCoord);
 		keepInventory = true;
 		
 		if(active) {
-			worldObj.setBlock(xCoord, yCoord, zCoord, BlockManager.goldenAppleFurnaceActive);
+			worldObj.setBlock(xCoord, yCoord, zCoord, BlockManager.appleCrusherActive);
 		}else{
-			worldObj.setBlock(xCoord, yCoord, zCoord, BlockManager.goldenAppleFurnaceIdle);
+			worldObj.setBlock(xCoord, yCoord, zCoord, BlockManager.appleCrusherIdle);
 		}
 		
 		keepInventory = false;
@@ -188,10 +185,9 @@ public class GoldenAppleFurnace extends BlockContainer {
 		}
 	}
 	
-	@Override
 	public void breakBlock(World world, int x, int y, int z, Block oldblock, int oldMetadata) {
 		if(!keepInventory) {
-			TileEntityGoldenAppleFurnace te = (TileEntityGoldenAppleFurnace) world.getTileEntity(x, y, z);
+			TileEntityAppleCrusher te = (TileEntityAppleCrusher) world.getTileEntity(x, y, z);
 			
 			if(te != null) {
 				for(int i = 0; i < te.getSizeInventory(); i++) {
@@ -223,7 +219,7 @@ public class GoldenAppleFurnace extends BlockContainer {
 				}
 				
 				EntityItem blockDrop;
-		        blockDrop = new EntityItem(world, x, y, z, new ItemStack(BlockManager.goldenAppleFurnaceIdle));
+		        blockDrop = new EntityItem(world, x, y, z, new ItemStack(BlockManager.appleCrusherIdle));
 		        world.spawnEntityInWorld(blockDrop);
 				world.func_147453_f(x, y, z, oldblock);
 			}
@@ -232,8 +228,7 @@ public class GoldenAppleFurnace extends BlockContainer {
 		super.breakBlock(world, x, y, z, oldblock, oldMetadata);
 	}
 	
-	@Override
 	public Item getItem(World world, int x, int y, int z) {
-		return Item.getItemFromBlock(BlockManager.goldenAppleFurnaceIdle);
+		return Item.getItemFromBlock(BlockManager.appleCrusherIdle);
 	}
 }
